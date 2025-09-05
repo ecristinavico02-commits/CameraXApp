@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".ConfColor">
+
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewViewConf"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/maskImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitCenter"
+            android:background="#77000000"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_weight="1" />
+
+
+
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Configuración de Color HSV"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintTop_toBottomOf="@id/maskImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+
+        <TextView
+            android:id="@+id/labelInferior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valores Inferiores (Min)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tvHueLowLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H Min:"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelInferior" />
+
+        <SeekBar
+            android:id="@+id/seekBarHueLow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="180"
+            app:layout_constraintStart_toEndOf="@+id/guideline_label_end"
+            app:layout_constraintEnd_toStartOf="@+id/tvHueLowValue"
+            app:layout_constraintTop_toTopOf="@+id/tvHueLowLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHueLowLabel"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvHueLowValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="30dp"
+            android:gravity="end"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvHueLowLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHueLowLabel"/>
+
+
+        <TextView
+            android:id="@+id/tvSaturationLowLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S Min:"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHueLowLabel" />
+
+        <SeekBar
+            android:id="@+id/seekBarSaturationLow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            app:layout_constraintStart_toEndOf="@+id/guideline_label_end"
+            app:layout_constraintEnd_toStartOf="@+id/tvSaturationLowValue"
+            app:layout_constraintTop_toTopOf="@+id/tvSaturationLowLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSaturationLowLabel"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvSaturationLowValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="30dp"
+            android:gravity="end"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSaturationLowLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSaturationLowLabel"/>
+
+
+        <TextView
+            android:id="@+id/tvValueLowLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="V Min:"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSaturationLowLabel" />
+
+        <SeekBar
+            android:id="@+id/seekBarValueLow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            app:layout_constraintStart_toEndOf="@+id/guideline_label_end"
+            app:layout_constraintEnd_toStartOf="@+id/tvValueLowValue"
+            app:layout_constraintTop_toTopOf="@+id/tvValueLowLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvValueLowLabel"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvValueLowValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="30dp"
+            android:gravity="end"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvValueLowLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvValueLowLabel"/>
+
+
+        <TextView
+            android:id="@+id/labelSuperior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valores Superiores (Max)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvValueLowLabel"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tvHueHighLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H Max:"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelSuperior" />
+
+        <SeekBar
+            android:id="@+id/seekBarHueHigh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="180"
+            app:layout_constraintStart_toEndOf="@+id/guideline_label_end"
+            app:layout_constraintEnd_toStartOf="@+id/tvHueHighValue"
+            app:layout_constraintTop_toTopOf="@+id/tvHueHighLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHueHighLabel"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvHueHighValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="30dp"
+            android:gravity="end"
+            android:text="180"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvHueHighLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHueHighLabel"/>
+
+
+        <TextView
+            android:id="@+id/tvSaturationHighLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S Max:"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHueHighLabel" />
+
+        <SeekBar
+            android:id="@+id/seekBarSaturationHigh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            app:layout_constraintStart_toEndOf="@+id/guideline_label_end"
+            app:layout_constraintEnd_toStartOf="@+id/tvSaturationHighValue"
+            app:layout_constraintTop_toTopOf="@+id/tvSaturationHighLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSaturationHighLabel"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvSaturationHighValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="30dp"
+            android:gravity="end"
+            android:text="255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSaturationHighLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSaturationHighLabel"/>
+
+
+        <TextView
+            android:id="@+id/tvValueHighLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="V Max:"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSaturationHighLabel" />
+
+        <SeekBar
+            android:id="@+id/seekBarValueHigh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            app:layout_constraintStart_toEndOf="@+id/guideline_label_end"
+            app:layout_constraintEnd_toStartOf="@+id/tvValueHighValue"
+            app:layout_constraintTop_toTopOf="@+id/tvValueHighLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvValueHighLabel"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvValueHighValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="30dp"
+            android:gravity="end"
+            android:text="255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvValueHighLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvValueHighLabel"/>
+
+
+        <Button
+            android:id="@+id/buttonSaveConfig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            app:layout_constraintTop_toBottomOf="@+id/tvValueHighLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_label_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="80dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
